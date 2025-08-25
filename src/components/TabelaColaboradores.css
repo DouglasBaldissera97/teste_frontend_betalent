@@ -5,37 +5,53 @@
 .beTalent {
     background-color: white;
     padding: 2px 40px;
-    margin-bottom: 30px;
     text-align: left;
     font-size: 18px;
 }
+
 .tabelaFuncionarios {
-    padding: 0px 35px;
+    padding: 20px 35px;
+    background-color: #f0f0f0;
 }
 
 .header {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    text-align: left;
 }
+
+@media (min-width: 768px) {
+    .header {
+        display: flex;
+    }
+}
+
 .header h1 {
     margin: 0;
     font-size: 24px;
 }
 
+.no-results-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
 
 /* Container que envolve o input e o ícone */
 .search-input-wrapper {
     position: relative;
-    width: 300px; /* Ou 100% para ocupar o espaço do container pai */
+    width: 300px;
+    /* Ou 100% para ocupar o espaço do container pai */
     display: inline-block;
 }
 
 /* O campo de input em si */
 .search-input-field {
     width: 100%;
-    padding: 15px 40px 10px 10px; /* Padding extra para o ícone */
+    padding: 15px 40px 10px 10px;
+    /* Padding extra para o ícone */
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -61,12 +77,76 @@ table {
     border-radius: 15px 15px 0px 0px;
     background-color: white;
 }
-/* Cabeçalho das colunas da tabela */
-.cabecalho {
-    background-color: #0500FF;
-    color: white;
-    padding: 12px 25px;
+
+/* Oculta as colunas de seta no desktop */
+.column-mobile-arrow {
+    display: none;
 }
+
+/* Esconde a linha de detalhes expandida por padrão */
+.expanded-details {
+    display: none;
+}
+
+/* Media Query para Mobile */
+@media (max-width: 768px) {
+    .search-input-wrapper {
+        width: 100%;
+    }
+
+    /* Oculta as colunas de desktop */
+    .column-desktop {
+        display: none;
+    }
+
+    /* Regra para a célula da seta */
+    .column-mobile-arrow {
+        display: table-cell;
+    }
+
+    /* Regra para a linha de detalhes expandida */
+    .expanded-details {
+        display: table-row;
+        /* Garante que a linha inteira seja visível */
+    }
+
+    /* Faz a linha inteira ser clicável e muda o cursor */
+    .employee-row {
+        cursor: pointer;
+    }
+
+    /* Estiliza os detalhes expandidos */
+    .expanded-details td {
+        display: table-cell;
+        /* A célula de detalhes precisa ter este display */
+        width: 100%;
+        background-color: #f9f9f9;
+        border-top: none;
+        padding: 0;
+    }
+
+    .details-container {
+        display: grid;
+        grid-template-columns: 23% 37% 40%;
+        justify-content: space-around;
+        width: 100%;
+        padding: 3px;
+    }
+
+    .detail-item {
+        /* Garanta que o texto não ultrapasse o container */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 11px;
+        flex: 1;
+        /* Ocupa o espaço disponível igualmente */
+        margin: 0 5px;
+        /* Adiciona um pequeno espaçamento horizontal */
+    }
+}
+
 th, td {
     border: none;
     padding: 12px 25px;
@@ -77,12 +157,20 @@ th {
     background-color: #f2f2f2;
     text-transform: uppercase;
 }
+
 td img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
 }
+
 tr {
     border-bottom: 1px solid #ccc;
+}
+
+tr th {
+    background-color: #0500FF;
+    color: white;
+    padding: 12px 25px;
 }
