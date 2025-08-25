@@ -1,0 +1,88 @@
+.lista-funcionarios-container {
+    font-family: Arial, sans-serif;
+}
+
+.beTalent {
+    background-color: white;
+    padding: 2px 40px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 18px;
+}
+.tabelaFuncionarios {
+    padding: 0px 35px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+
+/* Container que envolve o input e o ícone */
+.search-input-wrapper {
+    position: relative;
+    width: 300px; /* Ou 100% para ocupar o espaço do container pai */
+    display: inline-block;
+}
+
+/* O campo de input em si */
+.search-input-field {
+    width: 100%;
+    padding: 15px 40px 10px 10px; /* Padding extra para o ícone */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo e posicionamento do ícone */
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    cursor: pointer;
+}
+
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 15px 15px 0px 0px;
+    background-color: white;
+}
+/* Cabeçalho das colunas da tabela */
+.cabecalho {
+    background-color: #0500FF;
+    color: white;
+    padding: 12px 25px;
+}
+th, td {
+    border: none;
+    padding: 12px 25px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-transform: uppercase;
+}
+td img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+tr {
+    border-bottom: 1px solid #ccc;
+}
